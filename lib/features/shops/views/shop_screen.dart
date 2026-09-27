@@ -1,5 +1,5 @@
-import 'package:craftster/shops/repositories/shop.dart';
-import 'package:craftster/shops/views/shop_map.dart';
+import 'package:craftster/features/shops/repositories/shop.dart';
+import 'package:craftster/features/shops/views/shop_map.dart';
 import 'package:flutter/material.dart';
 
 class ShopScreen extends StatelessWidget {

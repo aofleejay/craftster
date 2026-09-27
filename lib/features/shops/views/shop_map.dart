@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:craftster/shops/models/shop.dart';
+import 'package:craftster/features/shops/models/shop.dart';
 import 'package:flutter/material.dart';
 import 'package:maplibre/maplibre.dart';
 

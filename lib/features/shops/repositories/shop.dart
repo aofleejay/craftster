@@ -1,4 +1,4 @@
-import 'package:craftster/shops/models/shop.dart';
+import 'package:craftster/features/shops/models/shop.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 class ShopRepository {
