@@ -13,7 +13,7 @@ class RemoteConfig {
         minimumFetchInterval: minimumFetchInterval,
       ),
     );
-    await remoteConfig.setDefaults(const {"minimum_version": "1.0.0"});
+    await remoteConfig.setDefaults({'minimum_version': '1.0.0'});
     await remoteConfig.fetchAndActivate();
   }
 

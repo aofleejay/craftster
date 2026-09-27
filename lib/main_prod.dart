@@ -2,7 +2,6 @@ import 'package:craftster/app/app.dart';
 import 'package:craftster/config/prod/firebase_options_prod.dart';
 import 'package:craftster/core/remote_config.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
@@ -18,11 +17,9 @@ void main() async {
     url: supabaseUrl,
     publishableKey: supabasePublishableKey,
   );
+
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await RemoteConfig.initialize(minimumFetchInterval: const Duration(hours: 1));
-
-  debugPrint('Firebase project: ${Firebase.app().options.projectId}');
-  debugPrint('Firebase appId: ${Firebase.app().options.appId}');
 
   runApp(const App());
 }
