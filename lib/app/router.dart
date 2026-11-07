@@ -4,6 +4,7 @@ import 'package:craftster/core/remote_config.dart';
 import 'package:craftster/features/force_update/views/force_update_screen.dart';
 import 'package:craftster/features/shops/views/shop_screen.dart';
 import 'package:go_router/go_router.dart';
+import 'package:sentry_flutter/sentry_flutter.dart';
 
 final router = GoRouter(
   redirect: (context, state) async {
@@ -16,10 +17,16 @@ final router = GoRouter(
     return null;
   },
   routes: [
-    GoRoute(path: '/', builder: (context, state) => const ShopScreen()),
+    GoRoute(
+      path: '/',
+      name: 'home',
+      builder: (context, state) => const ShopScreen(),
+    ),
     GoRoute(
       path: '/force-update',
+      name: 'force-update',
       builder: (context, state) => const ForceUpdateScreen(),
     ),
   ],
+  observers: [SentryNavigatorObserver()],
 );

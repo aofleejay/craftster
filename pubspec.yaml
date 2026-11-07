@@ -28,6 +28,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  sentry_flutter: ^10.3.0
   flutter:
     sdk: flutter
 
@@ -42,6 +43,7 @@ dependencies:
   package_info_plus: ^10.2.1
 
 dev_dependencies:
+  sentry_dart_plugin: ^3.4.0
   flutter_test:
     sdk: flutter
   flutter_driver:
@@ -95,3 +97,8 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
+
+sentry:
+  upload_debug_symbols: true
+  project: craftster
+  org: aofleejay
