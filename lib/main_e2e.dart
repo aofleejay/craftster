@@ -1,0 +1,28 @@
+import 'package:craftster/app/app.dart';
+import 'package:craftster/config/dev/firebase_options_dev.dart';
+import 'package:craftster/core/remote_config.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/material.dart';
+// ignore: depend_on_referenced_packages
+import 'package:flutter_driver/driver_extension.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
+
+void main() async {
+  enableFlutterDriverExtension();
+  WidgetsFlutterBinding.ensureInitialized();
+
+  const supabaseUrl = String.fromEnvironment('SUPABASE_URL');
+  const supabasePublishableKey = String.fromEnvironment(
+    'SUPABASE_PUBLISHABLE_KEY',
+  );
+
+  await Supabase.initialize(
+    url: supabaseUrl,
+    publishableKey: supabasePublishableKey,
+  );
+
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  await RemoteConfig.initialize(minimumFetchInterval: Duration.zero);
+
+  runApp(const App());
+}
