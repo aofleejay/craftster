@@ -19,9 +19,7 @@ class _ShopScreenState extends State<ShopScreen> {
         future: _getShop,
         builder: (context, snapshot) {
           if (snapshot.hasError) {
-            return Center(
-              child: Text('Error loading shops: ${snapshot.error}'),
-            );
+            return Center(child: Text('เกิดข้อผิดพลาด'));
           }
           if (!snapshot.hasData) {
             return const Center(child: CircularProgressIndicator());
